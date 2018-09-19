@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.vpclub.bait</groupId>
+    <artifactId>coupon-admin</artifactId>
+    <version>1.1.0</version>
+    <packaging>jar</packaging>
+
+    <name>coupon-admin</name>
+    <description>coupon-admin</description>
+
+    <parent>
+        <groupId>cn.vpclub</groupId>
+        <artifactId>spring-boot-starters</artifactId>
+        <version>1.5.18-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <moses-framework.version>1.0.14-SNAPSHOT</moses-framework.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>cn.vpclub</groupId>
+            <artifactId>spring-boot-starter-axon</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.axonframework</groupId>
+                    <artifactId>axon-amqp</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-amqp</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.axonframework</groupId>
+                    <artifactId>axon-mongo</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>cn.vpclub</groupId>
+            <artifactId>spring-boot-starter-shiro</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.vpclub</groupId>
+            <artifactId>moses-admin-web</artifactId>
+            <version>${moses-framework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.vpclub.bait</groupId>
+            <artifactId>coupon-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>cn.vpclub</groupId>
+                    <artifactId>spring-boot-starter-grpc</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <!-- grpc -->
+        <dependency>
+            <groupId>cn.vpclub</groupId>
+            <artifactId>spring-boot-starter-grpc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.vpclub</groupId>
+            <artifactId>moses-tests</artifactId>
+            <version>${moses-framework.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>cn.vpclub</groupId>
+                    <artifactId>moses-data</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

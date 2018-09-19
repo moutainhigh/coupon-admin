@@ -1,0 +1,4 @@
+logging:
+  level:
+    cn.vpclub.moses: debug
+    cn.vpclub.coupon.admin: debug

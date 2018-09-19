@@ -1,0 +1,8 @@
+logging:
+  level:
+    cn.vpclub.moses: info
+    cn.vpclub.coupon.admin: info
+
+spring:
+  rabbitmq:
+    host: rabbit-prod

@@ -1,0 +1,31 @@
+axon:
+  distributed:
+    jgroups:
+      configuration-file: jgroups/udp.xml
+
+server:
+  port: 9090
+
+logging:
+  level:
+    cn.vpclub.moses: debug
+    cn.vpclub.coupon.admin: debug
+
+spring:
+  rabbitmq:
+    host: rabbit-local
+
+#shiro:
+#  filter-chain-definitions: #默认为空，一般如下配置
+#    /**: anon
+
+hazelcast:
+  servers:
+    - hazelcast-local:5701
+
+grpc:
+  client:
+    coupon-query:
+      enable-keep-alive: true
+      keep-alive-delay: 5 # seconds
+      server-host: localhost

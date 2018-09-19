@@ -1,0 +1,36 @@
+app:
+  project: bait
+  name: coupon
+  role: admin
+  descriptions: "卡券模块后台服务admin"
+  cluster-name: moses
+
+
+
+#shiro:
+#   filter-chain-definitions: #默认为空，一般如下配置
+#     /consumedCoupon/**: authc
+#     /coupon/**: authc
+#     /couponLog/**: authc
+#     /**: illegalCharacterFilter
+#     /getPermissions: authc
+#   login-url: /login
+#   unauthorizedUrl: /403
+#   defaultViewUrl: /403
+#   permission-package: cn.vpclub.coupon.admin.controllers
+
+
+logging:
+  level:
+    org.jgroups: debug
+
+spring:
+  profiles:
+    include:
+    - web
+    - swagger
+    - locale
+    - logging
+    - axon-jgroups
+    - hazelcast
+#    - shiro
